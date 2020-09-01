@@ -1,0 +1,54 @@
+public class Cilindro extends Circulo{
+    double alt;
+    public Cilindro(double rad, double alt) {
+        super(rad);     
+        this.alt=alt;
+    }
+    
+    public double volumen(){
+        return super.area()*alt;
+    }
+    
+    public String toString(){
+        return super.toString()+"\nVolumen: "+volumen();
+    }
+    
+}
+
+--------------------------------------------------------------------------
+
+public class Circulo {
+    double rad;
+
+    public Circulo(double rad) {
+        this.rad = rad;
+    }   
+    
+    public double area(){
+        return Math.PI*rad*rad;
+    }
+    
+    public String toString(){//obtener el contenido de un objeto
+        return "radio: "+rad+"\nArea: "+area();
+    }   
+}
+
+
+-----------------------------------------------------------------------------
+
+
+public class PruebaHerencia1 {
+
+    public static void main(String[] args) {
+        
+        Circulo x=new Circulo(4);
+        System.out.println(x);
+        Cilindro c=new Cilindro(5, 15);
+        System.out.println("\nCilindro: "+"\n"+c);
+    }
+    
+}
+
+
+
+
